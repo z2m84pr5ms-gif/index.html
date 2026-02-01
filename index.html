@@ -29,7 +29,7 @@ body {
 
 h1 {
     font-size: 2.1rem;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 button {
@@ -54,7 +54,13 @@ button {
 
 .message {
     font-size: 1.4rem;
+    margin-top: 15px;
+}
+
+.result-img {
     margin-top: 20px;
+    max-width: 100%;
+    border-radius: 20px;
 }
 </style>
 </head>
@@ -79,16 +85,16 @@ function moveButton() {
     noBtn.style.top = y + "px";
 }
 
-moveButton(); // startowa losowa pozycja
+moveButton();
 
-noBtn.addEventListener("mouseover", () => {
+noBtn.addEventListener("touchstart", () => {
     if (escapeCount < 5) {
         moveButton();
         escapeCount++;
     }
 });
 
-noBtn.addEventListener("touchstart", () => {
+noBtn.addEventListener("mouseover", () => {
     if (escapeCount < 5) {
         moveButton();
         escapeCount++;
@@ -101,9 +107,11 @@ noBtn.addEventListener("click", () => {
     content.innerHTML = `
         <h1>Spoko 💙</h1>
         <p class="message">
-        I tak dziękuję, że tu jesteś.<br>
-        Miło było spróbować 😊
+            I tak dziękuję, że tu jesteś.<br>
+            Miło było spróbować 😊
         </p>
+        <img src="nie.gif" alt="Spoko" class="result-img">
+        
     `;
 });
 
@@ -111,9 +119,10 @@ document.getElementById("yes").addEventListener("click", () => {
     content.innerHTML = `
         <h1>🥰</h1>
         <p class="message">
-        Mega się cieszę!<br>
-        To chyba najlepsze walentynki ❤️
+            Mega się cieszę!<br>
+            To chyba najlepsze walentynki ❤️
         </p>
+        <img src="oliwka.jpg" alt="Spoko" class="result-img">
     `;
 });
 </script>
